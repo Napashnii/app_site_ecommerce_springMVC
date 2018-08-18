@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 ao?t 2018 20:27:09 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.intiformation.entity.Commande" table="COMMANDE">
+        <id name="idCommande" type="int">
+            <column name="IDCOMMANDE" />
+            <generator class="assigned" />
+        </id>
+        <property name="DateCommande" type="java.lang.String">
+            <column name="DATECOMMANDE" />
+        </property>
+        <one-to-one name="client" class="com.intiformation.entity.Client"></one-to-one>
+        <list name="listeProduit" inverse="false" table="PRODUIT" lazy="true">
+            <key>
+                <column name="IDCOMMANDE" />
+            </key>
+            <list-index></list-index>
+            <one-to-many class="com.intiformation.entity.Produit" />
+        </list>
+    </class>
+</hibernate-mapping>

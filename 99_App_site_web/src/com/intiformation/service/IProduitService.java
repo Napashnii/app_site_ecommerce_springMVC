@@ -6,7 +6,7 @@ import com.intiformation.entity.Produit;
 
 public interface IProduitService {
 	
-	public void ajoutProduit(Produit pProduit, int idCat);
+	public void ajoutProduit(Produit pProduit);
 	public void modifProduit(Produit pProduit);
 	public void suppProduit(int pIdProduit);
 	public Produit trouverProduitById(int pIdProduit);

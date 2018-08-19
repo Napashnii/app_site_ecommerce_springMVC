@@ -72,7 +72,7 @@ public class CategorieContoller {
 
 	// 2. Modif de l'objet recupere par l'utilisateur
 	@RequestMapping(value = "/categorie/update", method = RequestMethod.POST)
-	public String updateFonctionnaire(@ModelAttribute("CategorieModifCommand") Categorie pCategorie, ModelMap modele) {
+	public String updateCategorie(@ModelAttribute("CategorieModifCommand") Categorie pCategorie, ModelMap modele) {
 
 		CatalogueManged.modifier(pCategorie);
 
@@ -115,7 +115,7 @@ public class CategorieContoller {
 	//2.Ajout par l'utilisateur
 	@RequestMapping(value= "/categorie/ajout", method=RequestMethod.POST)
 	//on recupere les info saisie dans le formulaire dans l'objet de commande
-	public String addFonctionnaire(@ModelAttribute("CategorieCommand") Categorie pCategorie, ModelMap modele) {
+	public String addCategorie(@ModelAttribute("CategorieCommand") Categorie pCategorie, ModelMap modele) {
 		
 		// Appel du Service pour l'ajout du fonctionnaire dans la BDD
 		CatalogueManged.ajout(pCategorie);

@@ -28,8 +28,8 @@ public class ProduitService implements IProduitService{
 	}
 
 	@Override
-	public void ajoutProduit(Produit pProduit, int idCat) {
-		adminProduitMetier.addProduit(pProduit, idCat);
+	public void ajoutProduit(Produit pProduit) {
+		adminProduitMetier.addProduit(pProduit);
 		
 	}
 

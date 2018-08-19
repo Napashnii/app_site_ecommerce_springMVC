@@ -20,10 +20,9 @@ public class CatalogueService implements ICatalogueService {
 	
 	/**
 	 * setter pour l'injection du DAO avec spring
-	 * @param fonctionnaireDAO
+	 * @param catalogueDAO
 	 */
-	public CatalogueService(ICatalogue catalogueDAO) {
-		super();
+	public void setCatalogueDAO(ICatalogue catalogueDAO) {
 		this.catalogueDAO = catalogueDAO;
 	}
 

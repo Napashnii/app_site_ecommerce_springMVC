@@ -51,7 +51,7 @@ public class CatalogueDAO implements ICatalogue {
 	@Transactional
 	public List<Categorie> getAllCategorie() {
 		
-		return null;
+		return sessionFactory.getCurrentSession().createQuery("FROM categorie").list();
 	}
 	
 

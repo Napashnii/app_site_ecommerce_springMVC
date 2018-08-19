@@ -1,11 +1,21 @@
 package com.intiformation.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
-
-public class Categorie {
+@Entity(name="categorie")
+public class Categorie implements Serializable{
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id_categorie")
 	private int idCategorie;
 	private String nom;
 	private String photo;

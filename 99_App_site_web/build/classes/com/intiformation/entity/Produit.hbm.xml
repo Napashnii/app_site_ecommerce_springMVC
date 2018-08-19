@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 ao?t 2018 20:27:09 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.intiformation.entity.Produit" table="PRODUIT">
+        <id name="idProduit" type="int">
+            <column name="IDPRODUIT" />
+            <generator class="assigned" />
+        </id>
+        <property name="designation" type="java.lang.String">
+            <column name="DESIGNATION" />
+        </property>
+        <property name="description" type="java.lang.String">
+            <column name="DESCRIPTION" />
+        </property>
+        <property name="prix" type="double">
+            <column name="PRIX" />
+        </property>
+        <property name="quantite" type="int">
+            <column name="QUANTITE" />
+        </property>
+        <property name="selectionne" type="boolean">
+            <column name="SELECTIONNE" />
+        </property>
+        <property name="photo" type="java.lang.String">
+            <column name="PHOTO" />
+        </property>
+        <many-to-one name="categorie" class="com.intiformation.entity.Categorie" fetch="join">
+            <column name="CATEGORIE" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

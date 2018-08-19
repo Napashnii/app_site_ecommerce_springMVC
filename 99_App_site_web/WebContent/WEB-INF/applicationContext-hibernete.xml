@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+
+	<!-- ================================================================================================== -->
+	<!-- ======================= CONFIG ANNOTATION (detection des annotation) 
+		======================= -->
+	<!-- ================================================================================================== -->
+	<!-- 1. activer la detection des annotation ex : @Autowored -->
+	<context:annotation-config />
+
+	<!-- 2. activer la detection automatique des beans ex : @Repository @Service 
+		etc... -->
+	<context:component-scan
+		base-package="com.intiformation.springmvc" />
+
+	<!-- 3. activer la gestion declaration des transaction ex : @Transactional 
+		(detection des annotation : @Transactional) -->
+	<tx:annotation-driven
+		transaction-manager="transactionManagerBean" />
+
+	
+	<!-- ======================= Declaration d'un gestionnaire de transactions ======================= -->
+
+	<bean id="transactionManagerBean"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+
+		<!-- injection de la session factory dans le gestionnaire -->
+		<property name="sessionFactory" ref="sessionFactoryBean" />
+	</bean>
+
+	<!-- ======================= Déclaration de la session Factory =================================== -->
+
+	<bean id="sessionFactoryBean"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+
+		<!-- injection de la dataSource -->
+		<property name="dataSource" ref="dataSourceBean" />
+
+		<!-- definition des props d'hibernate -->
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${jdbc.hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${jdbc.hibernate.showSql}</prop>
+				<prop key="hibernate.hbm2ddl.auto">${jdbc.hibernate.hbm2ddl}</prop>
+			</props>
+		</property>
+
+		<!-- declaration des classe annotées : Mapping -->
+		<property name="annotatedClasses">
+			<list>
+				<value>com.intiformation.entity.Client</value>
+				<value>com.intiformation.entity.Categorie</value>
+				<value>com.intiformation.entity.Commande</value>
+				<value>com.intiformation.entity.Produit</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>

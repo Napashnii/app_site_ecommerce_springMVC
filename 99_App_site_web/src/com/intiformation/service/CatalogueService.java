@@ -1,5 +1,7 @@
 package com.intiformation.service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +42,18 @@ public class CatalogueService implements ICatalogueService {
 	@Override
 	public void supprimer(int pIdCategorie) {
 		catalogueDAO.deleteCategorie(pIdCategorie);
+	}
+
+	@Override
+	public List<Categorie> afficherTout() {
+		
+		return catalogueDAO.getAllCategorie();
+	}
+
+	@Override
+	public Categorie getCategorieById(int pIdCategorie) {
+	
+		return catalogueDAO.getCategorieById(pIdCategorie);
 	}
 
 }

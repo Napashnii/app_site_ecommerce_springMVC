@@ -1,11 +1,24 @@
 package com.intiformation.entity;
 
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-public class Produit {
+@Entity
+public class Produit implements Serializable{
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id_Produit")
 	private int idProduit;
+	
+	
 	private String designation;
 	private String description;
 	private double prix;

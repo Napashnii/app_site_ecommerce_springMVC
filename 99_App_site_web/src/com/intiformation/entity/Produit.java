@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-@Entity
+@Entity(name="produit")
 public class Produit implements Serializable{
 
 	@Id
@@ -18,7 +18,7 @@ public class Produit implements Serializable{
 	@Column(name="id_Produit")
 	private int idProduit;
 	
-	
+
 	private String designation;
 	private String description;
 	private double prix;

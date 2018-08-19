@@ -18,14 +18,15 @@
 	<!-- 2. activer la detection automatique des beans ex : @Repository @Service 
 		etc... -->
 	<context:component-scan
-		base-package="com.intiformation.springmvc" />
+		base-package="com.intiformation" />
 
 	<!-- 3. activer la gestion declaration des transaction ex : @Transactional 
 		(detection des annotation : @Transactional) -->
 	<tx:annotation-driven
 		transaction-manager="transactionManagerBean" />
 
-	
+
+
 	<!-- ======================= Declaration d'un gestionnaire de transactions ======================= -->
 
 	<bean id="transactionManagerBean"

@@ -9,7 +9,7 @@
 	<!-- ======================= localisation des fichiers de proprétés =============================== -->
 
 	<context:property-placeholder
-		location="/WEB-INF/properties" /
+		location="/WEB-INF/properties"/> 
 
 
 

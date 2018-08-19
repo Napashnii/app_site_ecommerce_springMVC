@@ -10,6 +10,7 @@
 		<config>WebContent/WEB-INF/applicationContext-hibernete.xml</config>
 		<config>WebContent/WEB-INF/applicationContext-datasource.xml</config>
 		<config>WebContent/WEB-INF/applicationContext-servlet.xml</config>
+		<config>WebContent/WEB-INF/applicationContext-security.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

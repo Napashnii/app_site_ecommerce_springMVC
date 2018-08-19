@@ -3,31 +3,31 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 18 ao?t 2018 20:27:09 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.intiformation.entity.Produit" table="PRODUIT">
+    <class name="com.intiformation.entity.Produit" table="produits">
         <id name="idProduit" type="int">
-            <column name="IDPRODUIT" />
+            <column name="id_produit" />
             <generator class="assigned" />
         </id>
         <property name="designation" type="java.lang.String">
-            <column name="DESIGNATION" />
+            <column name="designation" />
         </property>
         <property name="description" type="java.lang.String">
-            <column name="DESCRIPTION" />
+            <column name="description" />
         </property>
         <property name="prix" type="double">
-            <column name="PRIX" />
+            <column name="prix" />
         </property>
         <property name="quantite" type="int">
-            <column name="QUANTITE" />
+            <column name="quantite" />
         </property>
         <property name="selectionne" type="boolean">
-            <column name="SELECTIONNE" />
+            <column name="selectionne" />
         </property>
         <property name="photo" type="java.lang.String">
-            <column name="PHOTO" />
+            <column name="photo" />
         </property>
         <many-to-one name="categorie" class="com.intiformation.entity.Categorie" fetch="join">
-            <column name="CATEGORIE" />
+            <column name="categorie_id" />
         </many-to-one>
     </class>
 </hibernate-mapping>

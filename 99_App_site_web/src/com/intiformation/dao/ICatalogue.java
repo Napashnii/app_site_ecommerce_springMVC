@@ -12,5 +12,7 @@ public interface ICatalogue {
 	public Categorie getCategorieById(int pIdCategorie);
 	public List<Categorie> getAllCategorie();
 	
+	//public void ajouterUser (user u); 
+	//public void attribuerRole (Role r, Long userID); 
 
 }
